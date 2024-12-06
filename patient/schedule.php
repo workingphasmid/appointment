@@ -58,31 +58,31 @@
 
 
  //echo $userid;
- ?>
- <div class="container">
-     <div class="menu">
-     <table class="menu-container" border="0">
-             <tr>
-                 <td style="padding:10px" colspan="2">
-                     <table border="0" class="profile-container">
-                         <tr>
-                             <td width="30%" style="padding-left:20px" >
-                                 <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                             </td>
-                             <td style="padding:0px;margin:0px;">
-                                 <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
-                                 <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td colspan="2">
-                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                             </td>
-                         </tr>
-                 </table>
-                 </td>
-             </tr>
-             <tr class="menu-row" >
+?>
+<div class="container">
+    <div class="menu">
+    <table class="menu-container" border="0">
+            <tr>
+                <td style="padding:10px" colspan="2">
+                    <table border="0" class="profile-container">
+                        <tr>
+                            <td width="30%" style="padding-left:20px" >
+                                <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
+                            </td>
+                            <td style="padding:0px;margin:0px;">
+                                <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
+                                <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                            </td>
+                        </tr>
+                </table>
+                </td>
+            </tr>
+            <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home " >
                         <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
                     </td>
@@ -138,7 +138,7 @@
 
 
                 ?>
-                  
+                
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr >
@@ -162,18 +162,18 @@
                                             for ($y=0;$y<$list11->num_rows;$y++){
                                                 $row00=$list11->fetch_assoc();
                                                 $d=$row00["docname"];
-                                               
+                                                
                                                 echo "<option value='$d'><br/>";
-                                               
+                                                
                                             };
 
 
                                             for ($y=0;$y<$list12->num_rows;$y++){
                                                 $row00=$list12->fetch_assoc();
                                                 $d=$row00["title"];
-                                               
+                                                
                                                 echo "<option value='$d'><br/>";
-                                                                                         };
+                                            };
 
                                         echo ' </datalist>';
             ?>
@@ -216,8 +216,8 @@
                 
                 
                 <tr>
-                   <td colspan="4">
-                       <center>
+                    <td colspan="4">
+                        <center>
                         <div class="abc scroll">
                         <table width="100%" class="sub-table scrolldown" border="0" style="padding: 50px;border:none">
                             
@@ -313,17 +313,16 @@
                                     
                                 }
                             }
-                                 
+
                             ?>
- 
+
                             </tbody>
 
                         </table>
                         </div>
                         </center>
-                   </td> 
+                    </td> 
                 </tr>
-                       
                         
                         
             </table>

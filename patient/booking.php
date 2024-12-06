@@ -24,8 +24,6 @@
 <body>
     <?php
 
-    //learn from w3schools.com
-
     session_start();
 
     if (isset($_SESSION["user"])) {
@@ -230,7 +228,6 @@
 
                                         if (isset($_GET["id"])) {
 
-
                                             $id = $_GET["id"];
 
                                             $sqlmain = "select * from schedule inner join doctor on schedule.docid=doctor.docid where schedule.scheduleid=? order by schedule.scheduledate desc";
@@ -253,74 +250,65 @@
                                             $apponum = ($result12->num_rows) + 1;
 
                                             echo '
-                                        <form action="booking-complete.php" method="post">
+                                            <form action="booking-complete.php" method="post">
                                             <input type="hidden" name="scheduleid" value="' . $scheduleid . '" >
                                             <input type="hidden" name="apponum" value="' . $apponum . '" >
                                             <input type="hidden" name="date" value="' . $today . '" >
-
-                                        
-                                    
-                                    ';
+                                            ';
 
 
                                             echo '
-                                    <td style="width: 50%;" rowspan="2">
-                                            <div  class="dashboard-items search-items"  >
-                                            
-                                                <div style="width:100%">
-                                                        <div class="h1-search" style="font-size:25px;">
-                                                            Session Details
-                                                        </div><br><br>
-                                                        <div class="h3-search" style="font-size:18px;line-height:30px">
-                                                            Doctor name:  &nbsp;&nbsp;<b>' . $docname . '</b><br>
-                                                            Doctor Email:  &nbsp;&nbsp;<b>' . $docemail . '</b> 
+                                            <td style="width: 50%;" rowspan="2">
+                                                    <div  class="dashboard-items search-items"  >
+                                                    
+                                                        <div style="width:100%">
+                                                                <div class="h1-search" style="font-size:25px;">
+                                                                    Session Details
+                                                                </div><br><br>
+                                                                <div class="h3-search" style="font-size:18px;line-height:30px">
+                                                                    Doctor name:  &nbsp;&nbsp;<b>' . $docname . '</b><br>
+                                                                    Doctor Email:  &nbsp;&nbsp;<b>' . $docemail . '</b> 
+                                                                </div>
+                                                                <div class="h3-search" style="font-size:18px;">
+                                                                </div><br>
+                                                                <div class="h3-search" style="font-size:18px;">
+                                                                    Session Title: ' . $title . '<br>
+                                                                    Session Scheduled Date: ' . $scheduledate . '<br>
+                                                                    Session Starts : ' . $scheduletime . '<br>
+                                                                    Channeling fee : <b>LKR.2 000.00</b>
+                                                                </div>
+                                                                <br>
                                                         </div>
-                                                        <div class="h3-search" style="font-size:18px;">
-                                                          
-                                                        </div><br>
-                                                        <div class="h3-search" style="font-size:18px;">
-                                                            Session Title: ' . $title . '<br>
-                                                            Session Scheduled Date: ' . $scheduledate . '<br>
-                                                            Session Starts : ' . $scheduletime . '<br>
-                                                            Channeling fee : <b>LKR.2 000.00</b>
-
+                                                    </div>
+                                                </td>
+                                                
+                                                <td style="width: 25%;">
+                                                    <div  class="dashboard-items search-items"  >
+                                                    
+                                                        <div style="width:100%;padding-top: 15px;padding-bottom: 15px;">
+                                                                <div class="h1-search" style="font-size:20px;line-height: 35px;margin-left:8px;text-align:center;">
+                                                                    Your Appointment Number
+                                                                </div>
+                                                                <center>
+                                                                <div class=" dashboard-icons" style="margin-left: 0px;width:90%;font-size:70px;font-weight:800;text-align:center;color:var(--btnnictext);background-color: var(--btnice)">' . $apponum . '</div>
+                                                            </center>
+                                                            
+                                                                </div><br>
+                                                                
+                                                                <br>
+                                                                <br>
                                                         </div>
-                                                        <br>
-                                                        
-                                                </div>
-                                                        
-                                            </div>
-                                        </td>
-                                        
-                                        
-                                        
-                                        <td style="width: 25%;">
-                                            <div  class="dashboard-items search-items"  >
-                                            
-                                                <div style="width:100%;padding-top: 15px;padding-bottom: 15px;">
-                                                        <div class="h1-search" style="font-size:20px;line-height: 35px;margin-left:8px;text-align:center;">
-                                                            Your Appointment Number
-                                                        </div>
-                                                        <center>
-                                                        <div class=" dashboard-icons" style="margin-left: 0px;width:90%;font-size:70px;font-weight:800;text-align:center;color:var(--btnnictext);background-color: var(--btnice)">' . $apponum . '</div>
-                                                    </center>
-                                                       
-                                                        </div><br>
-                                                        
-                                                        <br>
-                                                        <br>
-                                                </div>
-                                                        
-                                            </div>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="Submit" class="login-btn btn-primary btn btn-book" style="margin-left:10px;padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;width:95%;text-align: center;" value="Book now" name="booknow"></button>
-                                            </form>
-                                            </td>
-                                        </tr>
-                                        ';
+                                                                
+                                                    </div>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <input type="Submit" class="login-btn btn-primary btn btn-book" style="margin-left:10px;padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;width:95%;text-align: center;" value="Book now" name="booknow"></button>
+                                                    </form>
+                                                    </td>
+                                                </tr>
+                                            ';
                                         }
                                     }
 
