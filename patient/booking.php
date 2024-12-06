@@ -45,7 +45,7 @@
     $stmt->bind_param("s",$useremail);
     $stmt->execute();
     $result = $stmt->get_result();
-    $userfetch=$userrow->fetch_assoc();
+    $userfetch=$result->fetch_assoc();
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
 
@@ -60,32 +60,32 @@
     $today = date('Y-m-d');
 
 
- //echo $userid;
- ?>
- <div class="container">
-     <div class="menu">
-     <table class="menu-container" border="0">
-             <tr>
-                 <td style="padding:10px" colspan="2">
-                     <table border="0" class="profile-container">
-                         <tr>
-                             <td width="30%" style="padding-left:20px" >
-                                 <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
-                             </td>
-                             <td style="padding:0px;margin:0px;">
-                                 <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
-                                 <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
-                             </td>
-                         </tr>
-                         <tr>
-                             <td colspan="2">
-                                 <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
-                             </td>
-                         </tr>
-                 </table>
-                 </td>
-             </tr>
-             <tr class="menu-row" >
+    //echo $userid;
+    ?>
+    <div class="container">
+        <div class="menu">
+        <table class="menu-container" border="0">
+                <tr>
+                    <td style="padding:10px" colspan="2">
+                        <table border="0" class="profile-container">
+                            <tr>
+                                <td width="30%" style="padding-left:20px" >
+                                    <img src="../img/user.png" alt="" width="100%" style="border-radius:50%">
+                                </td>
+                                <td style="padding:0px;margin:0px;">
+                                    <p class="profile-title"><?php echo substr($username,0,13)  ?>..</p>
+                                    <p class="profile-subtitle"><?php echo substr($useremail,0,22)  ?></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <a href="../logout.php" ><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                </td>
+                            </tr>
+                    </table>
+                    </td>
+                </tr>
+                <tr class="menu-row" >
                     <td class="menu-btn menu-icon-home " >
                         <a href="index.php" class="non-style-link-menu "><div><p class="menu-text">Home</p></a></div></a>
                     </td>
@@ -130,29 +130,22 @@
                                             echo '<datalist id="doctors">';
                                             $list11 = $database->query("select DISTINCT * from  doctor;");
                                             $list12 = $database->query("select DISTINCT * from  schedule GROUP BY title;");
-                                            
-
-                                            
-
 
                                             for ($y=0;$y<$list11->num_rows;$y++){
                                                 $row00=$list11->fetch_assoc();
                                                 $d=$row00["docname"];
-                                               
                                                 echo "<option value='$d'><br/>";
-                                               
                                             };
-
 
                                             for ($y=0;$y<$list12->num_rows;$y++){
                                                 $row00=$list12->fetch_assoc();
                                                 $d=$row00["title"];
-                                               
+                                                
                                                 echo "<option value='$d'><br/>";
-                                                                                         };
+                                            };
 
-                                        echo ' </datalist>';
-            ?>
+                                            echo ' </datalist>';
+                                        ?>
                                         
                                 
                                         <input type="Submit" value="Search" class="login-btn btn-primary btn" style="padding-left: 25px;padding-right: 25px;padding-top: 10px;padding-bottom: 10px;">

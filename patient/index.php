@@ -182,13 +182,13 @@
                                 <td>
                                     <h3>Welcome!</h3>
                                     <h1><?php echo $username  ?>.</h1>
-                                    <p>Haven't any idea about doctors? no problem let's jumping to
+                                    <p>Have no idea about who to consult with? No problem! <br> Let's jump to
                                         <a href="doctors.php" class="non-style-link"><b>"All Doctors"</b></a> section or
-                                        <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
+                                        <a href="schedule.php" class="non-style-link"><b>"Sessions"</b></a>.<br>
                                         Track your past and future appointments history.<br>Also find out the expected arrival time of your doctor or medical consultant.<br><br>
                                     </p>
 
-                                    <h3>Channel a Doctor Here</h3>
+                                    <h3>Find a Doctor or Session Here</h3>
                                     <form action="schedule.php" method="post" style="display: flex">
 
                                         <input type="search" name="search" class="input-text " placeholder="Search Doctor and We will Find The Session Available" list="doctors" style="width:45%;">&nbsp;&nbsp;
@@ -289,7 +289,7 @@
                                                     <?php echo $schedulerow->num_rows  ?>
                                                 </div><br>
                                                 <div class="h3-dashboard" style="font-size: 15px">
-                                                    Today Sessions
+                                                    Sessions Today
                                                 </div>
                                             </div>
                                             <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
@@ -312,7 +312,7 @@
 
 
 
-                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Your Upcoming Booking</p>
+                    <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Upcoming Booking</p>
                     <center>
                         <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
                             <table width="85%" class="sub-table scrolldown" border="0">
@@ -328,7 +328,7 @@
                                         <th class="table-headin">
 
 
-                                            Session Title
+                                            Session
 
                                         </th>
 
